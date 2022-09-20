@@ -1,6 +1,7 @@
-Hello!
+This project was made as an assignment for the coding fellowship, Per Scholas. 
 
-This project was made for the coding fellowship, Per Scholas.
+You can view the live site at
+AlexanderAhlquist.github.io
 
 It was a project to demonstrate competency using HTML, CSS, and Javascript without any back-end connectivity. The website is very simple, and based on the concept of my final project, which is a website which comics creators can go to in order to help them create comics. 
 
