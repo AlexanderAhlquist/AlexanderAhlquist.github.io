@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(219, 236, 252);
+    background-image: url(../images/pexels-pixabay-159751.jpg);
+    background-size:cover;
+    background-repeat:repeat-y;
+    background-blend-mode:difference;
+    margin: 0px;
+    font-family: "Poppins";
+}
+
+#main-container{
+    margin-top: 10px; 
+    border: 1px solid black;
+    height: fit-content; 
+    width: fit-content;
+    background-color: rgb(68, 45, 184);
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    opacity: .9;
+    color: white;
+
+}
+#logo{
+    font-family: 'Nabla', cursive;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+#logo h1{
+    margin: 0px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+form{
+    width: 200px;
+}
+button{
+    margin:20px;
+}
+
+.input-control.error input {
+    border-color: #ff0000;
+}
+
+.input-control .error {
+    color: #ff0000;
+    font-size: 11px;
+    height: 13px;
+}
+
+nav{
+    display:flex;
+    position: fixed;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align:center;
+    width: 100%;
+    background-color: white;
+    border-top: gray 2px solid;
+    padding: 0px;
+    margin:0px;
+    opacity: .9;
+}
+nav a{
+    color: gray;
+    text-decoration: none;
+}

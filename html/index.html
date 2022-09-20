@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <script src="../JavaScript/index.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <a href="index.html">
+                Home -
+            </a>
+            <a href="about.html">
+                About -
+            </a>
+            <a href="../html/register.html">
+                Register
+            </a>
+        </ul>
+    </nav>
+    <main>
+        <div id = logo><h1>The 6th Wall</h1></div>
+        <h1>What kinds of comics are you going to make?</h1>
+        <div id = "comictype">
+            <section id = "zine">Zine</section>
+            <section id = "graphicnovel">Graphic Novel</section>
+            <section id = "traditionalcomic">Traditional Comic</section>
+            <section id = "nontraditionalcomic">Non-traditional Comic</section>
+        </div>
+        <form onclick = "myFunction()">
+            <label for ="info">Want to know more?</label>
+            <select name = "type" id = "info">
+                <option value = "default"> find out more here! </option>
+                <option value = "zine-info">zine</option>
+                <option value = "graphicnovel-info">graphic novel</option>
+                <option value = "traditionalcomic-info">traditional comic</option>
+                <option value = "nontradcomic-info">non-traditional comic</option>
+            </select>
+        </form>
+        <div id = "bottom"></div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,45 @@
+Hello!
+
+This project was made for the coding fellowship, Per Scholas.
+
+It was a project to demonstrate competency using HTML, CSS, and Javascript without any back-end connectivity. The website is very simple, and based on the concept of my final project, which is a website which comics creators can go to in order to help them create comics. 
+
+There are only three pages on the site, the home page, the registration page, and the about page.
+
+The home page is meant to be a page where users will go and are presented with choices. Each of the four panels in the main section would lead to tips and instructions on how to create the type of comic. If you don't want to fully commit to a new page, you can use the dropdown menu to find out more about the different types of comics.
+
+The register page utilizes regex authentification to ensure that the data types entered are correct, and that the password and confirm password section are the same. This would be where users register to create accounts on the website.
+
+The about page just features a little description about me and why I created the webpage.
+
+#TECHNICAL REQUIREMENTS:
+
+##HTML
+
+Have at least 3 pages, keep the grid system consistent as much as possible
+Use at least 10 different HTML tags
+Use HTML tables
+Implement at least two uses for forms
+Dropped Down Menu 
+Use web fonts
+Use different types of content in the form of text, images, videos, and GIFs
+Use regex validation
+
+##CSS
+
+Inline, internal, and external styling
+Use five different CSS selectors
+Don’t use too many fonts
+Use colors that complement each other
+Use Flexbox (Optional)
+Use SASS/SCSS (Optional)
+Use animations (Optional)
+
+
+##Javascript
+
+External scripts
+Use variables, if statements, loops, at least one form of collections, functions/call back, and events
+Use AJAX (Optional) 
+Use JSON or XML (Optional)
+Use JQuery (Optional)

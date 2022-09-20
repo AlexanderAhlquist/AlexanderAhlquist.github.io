@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+        <nav>
+            <ul>
+                <a href="index.html">
+                    Home -
+                </a>
+                <a href="about.html">
+                    About -
+                </a>
+                <a href="../html/register.html">
+                    Register
+                </a>
+            </ul>
+        </nav>
+<center>
+    <div id = main-container>
+    <div id =logo>
+        <h1>The 6th Wall</h1>
+        <p>a comics crafting website!</p>
+    </div>
+    <form id="form" action="/">
+        <h1>Register</h1>
+        <div class="input-control">
+        <label for="fname">First Name: </label>
+        <input type="text" name="fname" id="fname" placeholder="enter name here">
+        <div class="error"></div>
+    </div>
+
+        <div class="input-control">
+        <label for="lname">Last Name: </label>
+        <input type="text" name="lname" id="lname" placeholder="enter last name">
+        <div class="error"></div>
+    </div>
+
+        <div class="input-control">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="enter email">
+        <div class="error"></div>
+    </div>
+
+        <div class="input-control">
+        <label for="password">Enter Password: </label>
+        <input type="password" name="password" id="password" placeholder="Enter password">
+        <div class="error"></div>
+    </div>
+
+        <div class="input-control">
+        <label for="confirm_password">Confirm Password: </label>
+        <input type="password" name="confirm_password" id="confirm_password" placeholder="Enter password">
+        <div class="error"></div>
+    </div>
+        <button id="sub" type="submit">Submit</button>
+    </form>
+
+</center></div>
+<script src="../javascript/register.js"></script>
+</body>
+</html>
