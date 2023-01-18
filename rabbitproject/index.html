@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabbit Page</title>
+    <link rel="stylesheet" href="resources/css/index.css">
+</head>
+<body>
+    <img src="resources/images/index/running_rabbit.gif">
+    <br>
+    <input type="button" onclick="runme()" id = "button" value="Random Rabbit!" />
+</body>
+<script>
+    function runme(){
+    const links = ["americanrabbit.html", 
+        "americansable.html", 
+        "angorarabbit.html"]
+    const randomElement = links[Math.floor(Math.random() * links.length)];
+    window.location = randomElement;}
+</script>
+</html>
