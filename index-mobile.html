@@ -26,6 +26,7 @@
             justify-content: center;
             align-items: center;
             font-family: 'whacky_joe', 'Press Start 2P', monospace;
+            padding: 10px;
         }
 
         .container {
@@ -33,8 +34,9 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 30px;
-            padding: 20px;
+            gap: 20px;
+            padding: 10px;
+            width: 100%;
         }
 
         @keyframes jump {
@@ -42,7 +44,7 @@
                 transform: translateY(0) scaleX(1);
             }
             50% {
-                transform: translateY(-20px) scaleX(0.95);
+                transform: translateY(-15px) scaleX(0.95);
             }
         }
 
@@ -50,99 +52,73 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5px;
+            gap: 3px;
             max-width: 100%;
             cursor: pointer;
         }
 
         .name-images img {
             max-width: 100%;
-            width: 80vw;
-            max-width: 600px;
-            height: 200px;
+            width: 95vw;
+            height: 100px;
             object-fit: contain;
         }
 
-        .name-images:hover img {
+        .name-images:active img {
             animation: jump 0.6s ease-in-out infinite;
-        }
-
-        .name-images:hover img:nth-child(2) {
-            animation-delay: 0.1s;
-        }
-
-        .name-images img:first-child {
-            height: 200px;
         }
 
         .enter-btn {
             background-color: #e93d3d;
             border: none;
-            padding: 15px 50px;
-            font-size: 18px;
+            padding: 12px 30px;
+            font-size: 16px;
             font-weight: bold;
             font-family: 'whacky_joe', Arial, sans-serif;
             color: #f0ff1b;
             cursor: pointer;
-            border-radius: 8px;
+            border-radius: 6px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            min-width: 180px;
-            height: 50px;
+            min-width: 140px;
+            height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .enter-btn:hover {
-            background-color: #e93d3d;
-            color: #f0ff1b;
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            touch-action: manipulation;
         }
 
         .enter-btn:active {
             transform: scale(0.98);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .enter-btn span {
             display: inline-block;
         }
 
-        .enter-btn:hover span {
+        .enter-btn:active span {
             animation: jump 0.6s ease-in-out infinite;
         }
 
-        .enter-btn:hover span:nth-child(1) {
+        .enter-btn:active span:nth-child(1) {
             animation-delay: 0s;
         }
 
-        .enter-btn:hover span:nth-child(2) {
+        .enter-btn:active span:nth-child(2) {
             animation-delay: 0.1s;
         }
 
-        .enter-btn:hover span:nth-child(3) {
+        .enter-btn:active span:nth-child(3) {
             animation-delay: 0.2s;
         }
 
-        .enter-btn:hover span:nth-child(4) {
+        .enter-btn:active span:nth-child(4) {
             animation-delay: 0.3s;
         }
 
-        .enter-btn:hover span:nth-child(5) {
+        .enter-btn:active span:nth-child(5) {
             animation-delay: 0.4s;
-        }
-
-
-        @media (max-width: 768px) {
-            .name-images img {
-                width: 90vw;
-            }
-
-            .enter-btn {
-                padding: 12px 40px;
-                font-size: 16px;
-            }
         }
     </style>
 </head>
@@ -152,19 +128,7 @@
             <img src="assets/images/Alex_Name.png" alt="Alex">
             <img src="assets/images/Ahlquist_Name.png" alt="Ahlquist">
         </div>
-        <button class="enter-btn" onclick="window.location.href='landing.html'"><span>E</span><span>n</span><span>t</span><span>e</span><span>r</span></button>
+        <button class="enter-btn" onclick="window.location.href='landing-mobile.html'"><span>E</span><span>n</span><span>t</span><span>e</span><span>r</span></button>
     </div>
-
-    <script>
-        // Redirect to mobile version if on mobile device
-        function isMobileDevice() {
-            return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        }
-
-        // Check if already on mobile version to avoid infinite redirects
-        if (isMobileDevice() && !window.location.pathname.includes('-mobile')) {
-            window.location.href = 'index-mobile.html';
-        }
-    </script>
 </body>
 </html>
