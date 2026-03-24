@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Rabbit Finder!</title>
+    <style>
+        @font-face {
+            font-family: 'whacky_joe';
+            src: url('../../assets/fonts/Whacky_joe.ttf') format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1447d4;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'whacky_joe', Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        @keyframes jump {
+            0%, 100% {
+                transform: translateY(0) scaleX(1);
+            }
+            50% {
+                transform: translateY(-20px) scaleX(0.95);
+            }
+        }
+
+        .rabbit-image {
+            max-width: 100%;
+            width: 80vw;
+            max-width: 600px;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        .random-btn {
+            background-color: #e93d3d;
+            border: none;
+            padding: 15px 50px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'whacky_joe', Arial, sans-serif;
+            color: #f0ff1b;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            min-width: 180px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .random-btn:hover {
+            background-color: #e93d3d;
+            color: #f0ff1b;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .random-btn:active {
+            transform: scale(0.98);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .back-btn {
+            background-color: #e93d3d;
+            border: none;
+            padding: 15px 50px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'whacky_joe', Arial, sans-serif;
+            color: #f0ff1b;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            min-width: 180px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background-color: #e93d3d;
+            color: #f0ff1b;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-btn:active {
+            transform: scale(0.98);
+        }
+
+        .back-btn span {
+            display: inline-block;
+        }
+
+        .back-btn:hover span {
+            animation: jump 0.6s ease-in-out infinite;
+        }
+
+        .back-btn:hover span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .back-btn:hover span:nth-child(2) {
+            animation-delay: 0.05s;
+        }
+
+        .back-btn:hover span:nth-child(3) {
+            animation-delay: 0.1s;
+        }
+
+        .back-btn:hover span:nth-child(4) {
+            animation-delay: 0.15s;
+        }
+
+        .random-btn span {
+            display: inline-block;
+        }
+
+        .random-btn:hover span {
+            animation: jump 0.6s ease-in-out infinite;
+        }
+
+        .random-btn:hover span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .random-btn:hover span:nth-child(2) {
+            animation-delay: 0.05s;
+        }
+
+        .random-btn:hover span:nth-child(3) {
+            animation-delay: 0.1s;
+        }
+
+        .random-btn:hover span:nth-child(4) {
+            animation-delay: 0.15s;
+        }
+
+        .random-btn:hover span:nth-child(5) {
+            animation-delay: 0.2s;
+        }
+
+        .random-btn:hover span:nth-child(6) {
+            animation-delay: 0.25s;
+        }
+
+        .random-btn:hover span:nth-child(7) {
+            animation-delay: 0.3s;
+        }
+
+        .random-btn:hover span:nth-child(8) {
+            animation-delay: 0.35s;
+        }
+
+        .random-btn:hover span:nth-child(9) {
+            animation-delay: 0.4s;
+        }
+
+        .random-btn:hover span:nth-child(10) {
+            animation-delay: 0.45s;
+        }
+
+        .random-btn:hover span:nth-child(11) {
+            animation-delay: 0.5s;
+        }
+
+        .random-btn:hover span:nth-child(12) {
+            animation-delay: 0.55s;
+        }
+
+        @media (max-width: 768px) {
+            .rabbit-image {
+                width: 90vw;
+            }
+
+            .random-btn {
+                padding: 12px 40px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="../../assets/images/rabbits/index/running_rabbit.gif" alt="Running Rabbit" class="rabbit-image">
+        <div class="button-group">
+            <a href="../../index.html" class="back-btn"><span>B</span><span>a</span><span>c</span><span>k</span></a>
+            <button class="random-btn" onclick="runme()"><span>R</span><span>a</span><span>n</span><span>d</span><span>o</span><span>m</span> <span>R</span><span>a</span><span>b</span><span>b</span><span>i</span><span>t</span><span>!</span></button>
+        </div>
+    </div>
+</body>
+<script>
+    function runme() {
+        const links = ["american-rabbit.html", 
+            "american-sable.html", 
+            "angora-rabbit.html",
+            "flemish-giant.html",
+            "lop-rabbit.html",
+            "holland-lop.html",
+            "rex-rabbit.html",
+            "palomino-rabbit.html",
+            "polish-rabbit.html",
+            "himalayan-rabbit.html"]
+        const randomElement = links[Math.floor(Math.random() * links.length)];
+        window.location = randomElement;
+    }
+</script>
+</html>

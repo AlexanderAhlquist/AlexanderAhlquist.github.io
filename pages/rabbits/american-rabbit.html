@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American Rabbit</title>
+    <style>
+        @font-face {
+            font-family: 'whacky_joe';
+            src: url('../../assets/fonts/Whacky_joe.ttf') format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1447d4;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'whacky_joe', Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #f0ff1b;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        @keyframes jump {
+            0%, 100% {
+                transform: translateY(0) scaleX(1);
+            }
+            50% {
+                transform: translateY(-20px) scaleX(0.95);
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        a {
+            background-color: #e93d3d;
+            color: #f0ff1b;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            width: 180px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'whacky_joe', Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        a span {
+            display: inline-block;
+        }
+
+        a:hover span {
+            animation: jump 0.6s ease-in-out infinite;
+        }
+
+        a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        a:active {
+            transform: scale(0.98);
+        }
+
+        .wiki-link {
+            margin-top: 10px;
+        }
+
+        .images-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .images-section h2 {
+            color: #f0ff1b;
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 3px solid gold;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>American Rabbit</h1>
+        <div class="nav-links">
+            <a href="index.html"><span>B</span><span>a</span><span>c</span><span>k</span> <span>t</span><span>o</span> <span>R</span><span>a</span><span>b</span><span>b</span><span>i</span><span>t</span><span>s</span></a>
+            <a href="https://en.wikipedia.org/wiki/American_rabbit" class="wiki-link"><span>W</span><span>i</span><span>k</span><span>i</span> <span>L</span><span>i</span><span>n</span><span>k</span></a>
+        </div>
+        <div class="images-section">
+            <h2>Pictures</h2>
+            <img src="../../assets/images/rabbits/americanrabbit/American-Rabbit.jpg" alt="American Rabbit">
+            <img src="../../assets/images/rabbits/americanrabbit/american-rabbit.webp" alt="American Rabbit">
+        </div>
+    </div>
+</body>
+</html>
