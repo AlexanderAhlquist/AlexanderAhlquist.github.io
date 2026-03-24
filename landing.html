@@ -123,8 +123,8 @@
 <body>
     <header>
         <div class="logo" id="logo">Alex Ahlquist</div>
-        <nav>
-            <a href="pages/rabbits/index.html">Random Rabbit</a>
+                <nav>
+            <a href="pages/rabbits/index.html">Rabbits</a>
         </nav>
     </header>
 
@@ -145,6 +145,27 @@
         if (isMobileDevice() && !window.location.pathname.includes('-mobile')) {
             window.location.href = 'landing-mobile.html';
         }
+    </script>
+
+    <script>
+        function setLogoRandomColors() {
+            const logo = document.getElementById('logo');
+            if (!logo) return;
+
+            const colors = ['#ff0000', '#00ff00', '#ff4500', '#ffff00', '#ff00ff', '#00ffff', '#ff8000', '#8000ff', '#ff0080', '#80ff00', '#daa520', '#ff4040', '#40ff40', '#00ff7f', '#ffff40'];
+            const text = logo.textContent || 'Alex Ahlquist';
+            logo.innerHTML = '';
+
+            text.split('').forEach((char) => {
+                const span = document.createElement('span');
+                span.textContent = char;
+                span.className = 'logo-letter';
+                span.style.color = colors[Math.floor(Math.random() * colors.length)];
+                logo.appendChild(span);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', setLogoRandomColors);
     </script>
 </body>
 </html>

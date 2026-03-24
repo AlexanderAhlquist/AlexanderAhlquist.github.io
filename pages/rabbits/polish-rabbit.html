@@ -74,6 +74,16 @@
             background-color: #e93d3d;
             transform: scale(1.05);
         }
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-3deg); }
+            75% { transform: rotate(3deg); }
+        }
+
+        .logo-letter {
+            display: inline-block;
+            animation: wiggle 0.35s infinite;
+        }
 
         .container {
             display: flex;
@@ -272,12 +282,12 @@
 </head>
 <body>
     <header>
-        <div class="logo">Alex Ahlquist</div>
-        <nav>
-            <a href="../../landing.html">Home</a>
-            <a href="index.html">Random Rabbit</a>
+        <div class="logo" id="logo">Alex Ahlquist</div>
+                <nav>
+            <a href="index.html">Rabbits</a>
         </nav>
-    </header>`r`n    <div class="container">
+    </header>
+    <div class="container">
         <h1>Polish Rabbit</h1>
         <div class="nav-links">
             <a href="index.html"><span>B</span><span>a</span><span>c</span><span>k</span> <span>t</span><span>o</span> <span>R</span><span>a</span><span>b</span><span>b</span><span>i</span><span>t</span><span>s</span></a>
@@ -320,6 +330,27 @@
             currentIndex = (currentIndex + 1) % images.length;
             updateImage();
         });
+    </script>
+
+    <script>
+        function setLogoRandomColors() {
+            const logo = document.getElementById('logo');
+            if (!logo) return;
+
+            const colors = ['#ff0000', '#00ff00', '#ff4500', '#ffff00', '#ff00ff', '#00ffff', '#ff8000', '#8000ff', '#ff0080', '#80ff00', '#daa520', '#ff4040', '#40ff40', '#00ff7f', '#ffff40'];
+            const text = logo.textContent || 'Alex Ahlquist';
+            logo.innerHTML = '';
+
+            text.split('').forEach((char) => {
+                const span = document.createElement('span');
+                span.textContent = char;
+                span.className = 'logo-letter';
+                span.style.color = colors[Math.floor(Math.random() * colors.length)];
+                logo.appendChild(span);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', setLogoRandomColors);
     </script>
 </body>
 </html>
