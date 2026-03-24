@@ -4,9 +4,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Alexander Ahlquist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1447d4;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .name-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 100%;
+        }
+
+        .name-images img {
+            max-width: 100%;
+            width: 80vw;
+            max-width: 600px;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        .enter-btn {
+            background-color: #fff;
+            border: none;
+            padding: 15px 50px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #1e3a8a;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .enter-btn:hover {
+            background-color: #2a5ac1;
+            color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .enter-btn:active {
+            transform: scale(0.98);
+        }
+
+        @media (max-width: 768px) {
+            .name-images img {
+                width: 90vw;
+            }
+
+            .enter-btn {
+                padding: 12px 40px;
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <a href = "rabbitproject/index.html">Random Rabbit Generator Demo</a>
+    <div class="container">
+        <div class="name-images">
+            <img src="resources/images/Alex_Name.png" alt="Alex">
+            <img src="resources/images/Ahlquist_Name.png" alt="Ahlquist">
+        </div>
+        <button class="enter-btn" onclick="window.location.href='rabbitproject/index.html'">Enter</button>
+    </div>
 </body>
 </html>

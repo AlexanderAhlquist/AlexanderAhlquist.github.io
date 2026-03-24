@@ -13,11 +13,12 @@
     <input type="button" onclick="runme()" id = "button" value="Random Rabbit!" />
 </body>
 <script>
-    function runme();
-    const links = ["americanrabbit.html", 
-        "americansable.html", 
-        "angorarabbit.html"]
-    const randomElement = links[Math.floor(Math.random() * links.length)];
-    window.location = randomElement;
+    function runme() {
+        const links = ["americanrabbit.html", 
+            "americansable.html", 
+            "angorarabbit.html"]
+        const randomElement = links[Math.floor(Math.random() * links.length)];
+        window.location = randomElement;
+    }
 </script>
 </html>
