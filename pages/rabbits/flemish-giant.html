@@ -108,7 +108,7 @@
             align-items: center;
             width: 100%;
         }
-        .nav-links a {
+            .nav-links a {
             background-color: #e93d3d;
             color: #f0ff1b;
             padding: 15px 30px;
@@ -211,14 +211,15 @@
             margin-top: 10px;
         }
 
-        @keyframes wiggle {
+                @keyframes wiggle {
             0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-4deg); }
+            75% { transform: rotate(4deg); }
+        }
 
         .logo-letter {
             display: inline-block;
             animation: wiggle 0.35s infinite;
-        }            25% { transform: rotate(-4deg); }
-            75% { transform: rotate(4deg); }
         }
 
         .thoughts-section h2 span {
@@ -267,7 +268,7 @@
                 flex-direction: column;
                 width: 100%;
             }
-        .nav-links a {
+            .nav-links a {
                 width: 100%;
                 text-align: center;
             }
@@ -280,7 +281,7 @@
         <nav>
             <a href="index.html">Rabbits</a>
         </nav>
-    </header>    <div class="container">
+    </header>`r`n    <div class="container">
         <h1>Flemish Giant</h1>
         <div class="nav-links">
             <a href="index.html"><span>B</span><span>a</span><span>c</span><span>k</span> <span>t</span><span>o</span> <span>R</span><span>a</span><span>b</span><span>b</span><span>i</span><span>t</span><span>s</span></a>
@@ -315,15 +316,17 @@
             imgElement.alt = 'Flemish Giant Rabbit';
         }
 
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            updateImage();
-        });
+        if (imgElement && prevButton && nextButton) {
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
 
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % images.length;
-            updateImage();
-        });
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateImage();
+            });
+        }
         function setLogoRandomColors() {
             const logo = document.getElementById('logo');
             if (!logo) return;
