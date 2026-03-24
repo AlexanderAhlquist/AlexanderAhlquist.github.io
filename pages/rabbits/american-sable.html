@@ -21,6 +21,7 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             background: #1447d4;
             min-height: 100vh;
@@ -74,16 +75,6 @@
             background-color: #e93d3d;
             transform: scale(1.05);
         }
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-3deg); }
-            75% { transform: rotate(3deg); }
-        }
-
-        .logo-letter {
-            display: inline-block;
-            animation: wiggle 0.35s infinite;
-        }
 
         .container {
             display: flex;
@@ -118,6 +109,7 @@
             align-items: center;
             width: 100%;
         }
+
         .nav-links a {
             background-color: #e93d3d;
             color: #f0ff1b;
@@ -134,16 +126,20 @@
             font-family: 'whacky_joe', 'Press Start 2P', monospace;
             font-size: 16px;
         }
+
         .nav-links a span {
             display: inline-block;
         }
+
         .nav-links a:hover span {
             animation: jump 0.6s ease-in-out infinite;
         }
+
         .nav-links a:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
+
         .nav-links a:active {
             transform: scale(0.98);
         }
@@ -231,6 +227,11 @@
             75% { transform: rotate(4deg); }
         }
 
+        .logo-letter {
+            display: inline-block;
+            animation: wiggle 0.35s infinite;
+        }
+
         .thoughts-section h2 span {
             display: inline-block;
             animation: wiggle 0.4s infinite;
@@ -277,6 +278,7 @@
                 flex-direction: column;
                 width: 100%;
             }
+
             .nav-links a {
                 width: 100%;
                 text-align: center;
@@ -287,7 +289,7 @@
 <body>
     <header>
         <div class="logo" id="logo">Alex Ahlquist</div>
-                <nav>
+        <nav>
             <a href="index.html">Rabbits</a>
         </nav>
     </header>
@@ -307,7 +309,7 @@
         </div>
         <div class="thoughts-section">
             <h2><span>A</span><span>l</span><span>e</span><span>x</span><span>'</span><span>s</span> <span>T</span><span>h</span><span>o</span><span>u</span><span>g</span><span>h</span><span>t</span><span>s</span></h2>
-            <p>Coming Soon</p>
+            <p>This rabbit looks pretty chill. I like their cute whiskers. There's people called "sablers" apparently. idk google it. they make more sables and breed em and stuff! wicked cool huh????</p>
         </div>
     </div>
     <script>
@@ -336,24 +338,29 @@
             currentIndex = (currentIndex + 1) % images.length;
             updateImage();
         });
-    </script>
 
-    <script>
         function setLogoRandomColors() {
             const logo = document.getElementById('logo');
             if (!logo) return;
-
-            const colors = ['#ff0000', '#00ff00', '#ff4500', '#ffff00', '#ff00ff', '#00ffff', '#ff8000', '#8000ff', '#ff0080', '#80ff00', '#daa520', '#ff4040', '#40ff40', '#00ff7f', '#ffff40'];
             const text = logo.textContent || 'Alex Ahlquist';
             logo.innerHTML = '';
 
-            text.split('').forEach((char) => {
+            for (const char of text) {
                 const span = document.createElement('span');
                 span.textContent = char;
                 span.className = 'logo-letter';
-                span.style.color = colors[Math.floor(Math.random() * colors.length)];
+                span.style.color = randomColor();
                 logo.appendChild(span);
-            });
+            }
+        }
+
+        function randomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
         }
 
         document.addEventListener('DOMContentLoaded', setLogoRandomColors);
