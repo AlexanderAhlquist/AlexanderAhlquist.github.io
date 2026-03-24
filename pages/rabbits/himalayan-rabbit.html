@@ -21,15 +21,58 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             background: #1447d4;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             font-family: 'whacky_joe', 'Press Start 2P', monospace;
             padding: 20px;
+        }
+
+        header {
+            background-color: #0f2fa0;
+            padding: 15px 30px;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 20px;
+            color: #f0ff1b;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #f0ff1b;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            width: auto;
+            height: auto;
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        nav a:hover {
+            background-color: #e93d3d;
+            transform: scale(1.05);
         }
 
         .container {
@@ -65,8 +108,7 @@
             align-items: center;
             width: 100%;
         }
-
-        a {
+        .nav-links a {
             background-color: #e93d3d;
             color: #f0ff1b;
             padding: 15px 30px;
@@ -82,21 +124,17 @@
             font-family: 'whacky_joe', 'Press Start 2P', monospace;
             font-size: 16px;
         }
-
-        a span {
+        .nav-links a span {
             display: inline-block;
         }
-
-        a:hover span {
+        .nav-links a:hover span {
             animation: jump 0.6s ease-in-out infinite;
         }
-
-        a:hover {
+        .nav-links a:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
-
-        a:active {
+        .nav-links a:active {
             transform: scale(0.98);
         }
 
@@ -105,6 +143,51 @@
             flex-direction: column;
             gap: 15px;
             width: 100%;
+            position: relative;
+        }
+
+        .carousel {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #f0ff1b;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel:hover button {
+            opacity: 1;
+        }
+
+        .carousel .prev {
+            left: 10px;
+        }
+
+        .carousel .next {
+            right: 10px;
+        }
+
+        .carousel img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 3px solid gold;
         }
 
         .images-section h2 {
@@ -112,6 +195,54 @@
             text-align: center;
             font-size: 1.5em;
             margin-top: 10px;
+        }
+
+        .thoughts-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .thoughts-section h2 {
+            color: #f0ff1b;
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-4deg); }
+            75% { transform: rotate(4deg); }
+        }
+
+        .thoughts-section h2 span {
+            display: inline-block;
+            animation: wiggle 0.4s infinite;
+        }
+
+        .thoughts-section h2 span:nth-child(1) { color: #ff0000; } /* A - Red */
+        .thoughts-section h2 span:nth-child(2) { color: #00ff00; } /* l - Green */
+        .thoughts-section h2 span:nth-child(3) { color: #ff4500; } /* e - Orange Red */
+        .thoughts-section h2 span:nth-child(4) { color: #ffff00; } /* x - Yellow */
+        .thoughts-section h2 span:nth-child(5) { color: #ff00ff; } /* ' - Magenta */
+        .thoughts-section h2 span:nth-child(6) { color: #00ffff; } /* s - Cyan */
+        .thoughts-section h2 span:nth-child(7) { color: #ff8000; } /*   - Orange */
+        .thoughts-section h2 span:nth-child(8) { color: #8000ff; } /* T - Purple */
+        .thoughts-section h2 span:nth-child(9) { color: #ff0080; } /* h - Pink */
+        .thoughts-section h2 span:nth-child(10) { color: #80ff00; } /* o - Lime */
+        .thoughts-section h2 span:nth-child(11) { color: #daa520; } /* u - Goldenrod */
+        .thoughts-section h2 span:nth-child(12) { color: #ff4040; } /* g - Light Red */
+        .thoughts-section h2 span:nth-child(13) { color: #40ff40; } /* h - Light Green */
+        .thoughts-section h2 span:nth-child(14) { color: #00ff7f; } /* t - Spring Green */
+        .thoughts-section h2 span:nth-child(15) { color: #ffff40; } /* s - Light Yellow */
+
+        .thoughts-section p {
+            color: #f5f5f5;
+            text-align: center;
+            font-size: 1em;
+            line-height: 1.6;
         }
 
         img {
@@ -132,8 +263,7 @@
                 flex-direction: column;
                 width: 100%;
             }
-
-            a {
+            .nav-links a {
                 width: 100%;
                 text-align: center;
             }
@@ -141,7 +271,13 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <header>
+        <div class="logo">Alex Ahlquist</div>
+        <nav>
+            <a href="../../landing.html">Home</a>
+            <a href="index.html">Random Rabbit</a>
+        </nav>
+    </header>`r`n    <div class="container">
         <h1>Himalayan Rabbit</h1>
         <div class="nav-links">
             <a href="index.html"><span>B</span><span>a</span><span>c</span><span>k</span> <span>t</span><span>o</span> <span>R</span><span>a</span><span>b</span><span>b</span><span>i</span><span>t</span><span>s</span></a>
@@ -149,9 +285,41 @@
         </div>
         <div class="images-section">
             <h2>Pictures</h2>
-            <img src="../../assets/images/rabbits/himalayan/Himalayan-Rabbit.png" alt="Himalayan Rabbit">
-            <img src="../../assets/images/rabbits/himalayan/himalayan_rabbit_lay_flat.png" alt="Himalayan Rabbit">
+            <div class="carousel">
+                <button class="prev">&lt;</button>
+                <img id="current-image" src="../../assets/images/rabbits/himalayan/Himalayan-Rabbit.png" alt="Himalayan Rabbit">
+                <button class="next">&gt;</button>
+            </div>
+        </div>
+        <div class="thoughts-section">
+            <h2><span>A</span><span>l</span><span>e</span><span>x</span><span>'</span><span>s</span> <span>T</span><span>h</span><span>o</span><span>u</span><span>g</span><span>h</span><span>t</span><span>s</span></h2>
+            <p>Coming Soon</p>
         </div>
     </div>
+    <script>
+        const images = [
+            '../../assets/images/rabbits/himalayan/Himalayan-Rabbit.png',
+            '../../assets/images/rabbits/himalayan/himalayan_rabbit_lay_flat.png'
+        ];
+        let currentIndex = 0;
+        const imgElement = document.getElementById('current-image');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+
+        function updateImage() {
+            imgElement.src = images[currentIndex];
+            imgElement.alt = 'Himalayan Rabbit';
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        });
+    </script>
 </body>
 </html>

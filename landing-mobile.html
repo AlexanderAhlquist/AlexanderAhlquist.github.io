@@ -28,16 +28,20 @@
             font-family: 'whacky_joe', 'Press Start 2P', monospace;
             display: flex;
             flex-direction: column;
+            align-items: center;
             padding-bottom: 20px;
         }
 
         header {
             background-color: #0f2fa0;
-            padding: 12px 15px;
+            padding: 15px 20px;
+            width: 100%;
+            max-width: 1200px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
         }
 
         .logo {
@@ -61,7 +65,11 @@
             padding: 6px 12px;
             border-radius: 4px;
             transition: all 0.3s ease;
+        }
+
+        nav a:hover {
             background-color: #e93d3d;
+            transform: scale(1.05);
         }
 
         nav a:active {
@@ -87,7 +95,7 @@
 </head>
 <body>
     <header>
-        <div class="logo">Alex Ahlquist</div>
+        <div class="logo" id="logo">Alex Ahlquist</div>
         <nav>
             <a href="pages/rabbits/index.html">Rabbits</a>
         </nav>
