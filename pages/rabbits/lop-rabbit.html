@@ -21,15 +21,58 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             background: #1447d4;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             font-family: 'whacky_joe', 'Press Start 2P', monospace;
             padding: 20px;
+        }
+
+        header {
+            background-color: #0f2fa0;
+            padding: 15px 30px;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 20px;
+            color: #f0ff1b;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #f0ff1b;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            width: auto;
+            height: auto;
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        nav a:hover {
+            background-color: #e93d3d;
+            transform: scale(1.05);
         }
 
         .container {
@@ -65,8 +108,7 @@
             align-items: center;
             width: 100%;
         }
-
-        a {
+        .nav-links a {
             background-color: #e93d3d;
             color: #f0ff1b;
             padding: 15px 30px;
@@ -82,21 +124,17 @@
             font-family: 'whacky_joe', 'Press Start 2P', monospace;
             font-size: 16px;
         }
-
-        a span {
+        .nav-links a span {
             display: inline-block;
         }
-
-        a:hover span {
+        .nav-links a:hover span {
             animation: jump 0.6s ease-in-out infinite;
         }
-
-        a:hover {
+        .nav-links a:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
-
-        a:active {
+        .nav-links a:active {
             transform: scale(0.98);
         }
 
@@ -175,7 +213,11 @@
 
         @keyframes wiggle {
             0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-4deg); }
+
+        .logo-letter {
+            display: inline-block;
+            animation: wiggle 0.35s infinite;
+        }            25% { transform: rotate(-4deg); }
             75% { transform: rotate(4deg); }
         }
 
@@ -225,8 +267,7 @@
                 flex-direction: column;
                 width: 100%;
             }
-
-            a {
+        .nav-links a {
                 width: 100%;
                 text-align: center;
             }
@@ -234,7 +275,12 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <header>
+        <div class="logo" id="logo">Alex Ahlquist</div>
+        <nav>
+            <a href="index.html">Rabbits</a>
+        </nav>
+    </header>    <div class="container">
         <h1>Lop Rabbit</h1>
         <div class="nav-links">
             <a href="index.html"><span>B</span><span>a</span><span>c</span><span>k</span> <span>t</span><span>o</span> <span>R</span><span>a</span><span>b</span><span>b</span><span>i</span><span>t</span><span>s</span></a>
@@ -277,6 +323,31 @@
             currentIndex = (currentIndex + 1) % images.length;
             updateImage();
         });
+        function setLogoRandomColors() {
+            const logo = document.getElementById('logo');
+            if (!logo) return;
+            const text = logo.textContent || 'Alex Ahlquist';
+            logo.innerHTML = '';
+
+            for (const char of text) {
+                const span = document.createElement('span');
+                span.textContent = char;
+                span.className = 'logo-letter';
+                span.style.color = randomColor();
+                logo.appendChild(span);
+            }
+        }
+
+        function randomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        document.addEventListener('DOMContentLoaded', setLogoRandomColors);
     </script>
 </body>
 </html>
