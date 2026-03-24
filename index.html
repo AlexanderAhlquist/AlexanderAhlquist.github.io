@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexander Ahlquist</title>
     <style>
+        @font-face {
+            font-family: 'whacky_joe';
+            src: url('resources/fonts/Whacky_joe_cutout.ttf') format('truetype');
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -30,12 +35,22 @@
             padding: 20px;
         }
 
+        @keyframes jump {
+            0%, 100% {
+                transform: translateY(0) scaleX(1);
+            }
+            50% {
+                transform: translateY(-20px) scaleX(0.95);
+            }
+        }
+
         .name-images {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 5px;
             max-width: 100%;
+            cursor: pointer;
         }
 
         .name-images img {
@@ -46,18 +61,27 @@
             object-fit: contain;
         }
 
+        .name-images:hover img {
+            animation: jump 0.6s ease-in-out infinite;
+        }
+
+        .name-images:hover img:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
         .name-images img:first-child {
             height:120px;
             width: 500px;
         }
 
         .enter-btn {
-            background-color: #fff;
+            background-color: #e93d3d;
             border: none;
             padding: 15px 50px;
             font-size: 18px;
             font-weight: bold;
-            color: #1e3a8a;
+            font-family: 'whacky_joe', Arial, sans-serif;
+            color: #f0ff1b;
             cursor: pointer;
             border-radius: 8px;
             transition: all 0.3s ease;
@@ -65,14 +89,42 @@
         }
 
         .enter-btn:hover {
-            background-color: #2a5ac1;
-            color: #fff;
+            background-color: #e93d3d;
+            color: #f0ff1b;
             transform: scale(1.05);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
         .enter-btn:active {
             transform: scale(0.98);
+        }
+
+        .enter-btn span {
+            display: inline-block;
+        }
+
+        .enter-btn:hover span {
+            animation: jump 0.6s ease-in-out infinite;
+        }
+
+        .enter-btn:hover span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .enter-btn:hover span:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .enter-btn:hover span:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .enter-btn:hover span:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .enter-btn:hover span:nth-child(5) {
+            animation-delay: 0.4s;
         }
 
 
@@ -94,7 +146,7 @@
             <img src="resources/images/Alex_Name.png" alt="Alex">
             <img src="resources/images/Ahlquist_Name.png" alt="Ahlquist">
         </div>
-        <button class="enter-btn" onclick="window.location.href='rabbitproject/index.html'">Enter</button>
+        <button class="enter-btn" onclick="window.location.href='rabbitproject/index.html'"><span>E</span><span>n</span><span>t</span><span>e</span><span>r</span></button>
     </div>
 </body>
 </html>
